@@ -7,7 +7,15 @@ track their portfolio and review an on-chain ledger of distributions.
 This repository is the web front end (React + Vite + TypeScript). It is a **demo UI**: all data is
 sample data generated in the browser, and no real wallets, funds or customers are involved.
 
-**Live site:** https://revora-frontend.vercel.app
+**Live site:** https://revora-frontend-omega.vercel.app
+
+## Contracts
+
+Deployed on the Stellar **testnet** (no real funds):
+
+| Contract | ID | Explorer |
+| --- | --- | --- |
+| Revora revenue-deposit | `CABIJLQV4TKBHMETNIISV4OT76EDR5WXCZVJJLXHA6AEIII2JVYAHP2I` | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CABIJLQV4TKBHMETNIISV4OT76EDR5WXCZVJJLXHA6AEIII2JVYAHP2I) / [Stellar Lab](https://lab.stellar.org/r/testnet/contract/CABIJLQV4TKBHMETNIISV4OT76EDR5WXCZVJJLXHA6AEIII2JVYAHP2I) |
 
 ## Features
 

@@ -21,6 +21,32 @@ import { AdminAlertsInbox } from "./pages/AdminAlertsInbox";
 import { PayoutSchedule } from "./pages/PayoutSchedule";
 import { GovernanceVoteReceiptDemo } from "./pages/GovernanceVoteReceiptDemo";
 
+const LIVE_URL = "https://revora-frontend-omega.vercel.app";
+const REPO_URL = "https://github.com/RevoraOrg/Revora-Frontend";
+const CONTRACT_ID = "CABIJLQV4TKBHMETNIISV4OT76EDR5WXCZVJJLXHA6AEIII2JVYAHP2I";
+const STELLAR_LAB_URL = `https://lab.stellar.org/r/testnet/contract/${CONTRACT_ID}`;
+const STELLAR_EXPERT_URL = `https://stellar.expert/explorer/testnet/contract/${CONTRACT_ID}`;
+
+function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="site-footer__row">
+        <strong>On-chain (Stellar testnet)</strong>
+        <span className="text-muted">
+          Revora revenue-deposit contract, deployed on the Stellar <em>testnet</em> (no real funds):
+        </span>
+      </div>
+      <code className="site-footer__contract">{CONTRACT_ID}</code>
+      <div className="site-footer__row">
+        <a href={STELLAR_EXPERT_URL} className="link-styled" target="_blank" rel="noopener noreferrer">Stellar Expert</a>
+        <a href={STELLAR_LAB_URL} className="link-styled" target="_blank" rel="noopener noreferrer">Stellar Lab</a>
+        <a href={REPO_URL} className="link-styled" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+        <a href={LIVE_URL} className="link-styled" target="_blank" rel="noopener noreferrer">Live site</a>
+      </div>
+    </footer>
+  );
+}
+
 export function App() {
   return (
     <Router>
@@ -90,9 +116,19 @@ function AppLayout() {
       <a href="#main-content" className="skip-link" onClick={handleSkipToContent}>
         Skip to main content
       </a>
+      <header className="site-header">
+        <Link to="/" className="site-header__brand">Revora</Link>
+        <nav className="site-header__nav" aria-label="Primary">
+          <Link to="/startup/dashboard" className="site-link">Startup</Link>
+          <Link to="/investor/portal" className="site-link">Investor</Link>
+          <Link to="/admin/alerts" className="site-link">Admin</Link>
+          <a href={REPO_URL} className="site-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </header>
       <main id="main-content" tabIndex={-1}>
         <Outlet />
       </main>
+      <SiteFooter />
     </>
   );
 }
@@ -184,7 +220,8 @@ function Home() {
         </div>
 
         <div className="home-footer">
-          revora-frontend (React + Vite + TS) • Powered by Stellar
+          revora-frontend (React + Vite + TS) • Powered by Stellar •{" "}
+          <a href={REPO_URL} className="link-styled" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </div>
