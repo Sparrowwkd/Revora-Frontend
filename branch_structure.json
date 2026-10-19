@@ -1,0 +1,18 @@
+{
+  "default_branch": "master",
+  "branches": [
+    "master",
+    "origin",
+    "security/issue-929-security-2fa-totp-enrolment-secret-is-sent-to"
+  ],
+  "parent": {
+    "master": null,
+    "origin": "master",
+    "security/issue-929-security-2fa-totp-enrolment-secret-is-sent-to": "master"
+  },
+  "order": [
+    "master",
+    "origin",
+    "security/issue-929-security-2fa-totp-enrolment-secret-is-sent-to"
+  ]
+}
